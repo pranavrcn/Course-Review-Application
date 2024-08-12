@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="edu.virginia.sde.reviews.CourseSearchController"
+            prefHeight="720.0" prefWidth="1280.0">
+    <VBox alignment="CENTER" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="680.0" AnchorPane.rightAnchor="0.0" AnchorPane.leftAnchor="0.0"
+          fx:id="bannerPane">
+        <Button fx:id="myReviews" text="My Reviews" onAction="#redirectMyReview" alignment="TOP_RIGHT">
+        </Button>
+        <Button fx:id="logOut" text="Log Out" onAction="#logOut" alignment="TOP_RIGHT"/>
+
+        <Label fx:id="course" text="Course Seach Dashboard" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="300.0"></Label>
+    </VBox>
+        <!-- Left VBox for Course Search and Add -->
+        <VBox alignment="CENTER" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="60.0" AnchorPane.rightAnchor="400.0"
+              AnchorPane.bottomAnchor="360.0">
+            <!-- Course Search -->
+            <VBox spacing="10" alignment="CENTER">
+                <Label text="Search or Add Courses on Log" />
+                <HBox spacing="10">
+                    <Label text="Mnemonic:" />
+                    <TextField fx:id="mnemonicField" HBox.hgrow="ALWAYS" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Number:" />
+                    <TextField fx:id="numberField" HBox.hgrow="ALWAYS" />
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Title:" />
+                    <TextField fx:id="titleField" HBox.hgrow="ALWAYS" />
+                </HBox>
+                <Button fx:id="searchButton" text="Search" onAction="#searchCourse" />
+                <Button fx:id="addCourse" text="Add Course" onAction="#addCourse"/>
+                <Label fx:id="errorMessageLabel" textFill="RED"/>
+            </VBox>
+        </VBox>
+        <!-- Bottom VBox for TableView -->
+    <VBox alignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0" prefHeight="360.0">
+    <TableView fx:id="resultsTable" onMouseClicked="#onCourseSelected"> <!-- Added onMouseClicked event -->
+        <columns>
+            <TableColumn text="Mnemonic">
+                <cellValueFactory>
+                    <PropertyValueFactory property="mnemonic"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Number">
+                <cellValueFactory>
+                    <PropertyValueFactory property="number"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Title">
+                <cellValueFactory>
+                    <PropertyValueFactory property="title"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Average Review">
+                <cellValueFactory>
+                    <PropertyValueFactory property="rating"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    </VBox>
+</AnchorPane>
