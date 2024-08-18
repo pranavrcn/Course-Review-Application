@@ -40,4 +40,5 @@ This project is a JavaFX-based CRUD (Create, Read, Update, Delete) application f
 - **Database Management:** Utilized SQLite for data persistence, ensuring all user data and course reviews are saved and retrievable.
 - **SQL:** Wrote SQL queries to manage data in a relational database, ensuring data integrity and enforcing constraints.
 - **Data Validation:** Implemented input validation and error handling to ensure robustness and usability.
-- **Java Programming:** Employed object-oriented principles, including the use of JDBC and optionally Hibernate, for data access and manipulation.
+- **Java Programming:** Employed object-oriented principles, including the use of JDBC.
+- 
